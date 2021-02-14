@@ -186,3 +186,43 @@ public class Doctor {
 ```
 
 El método constructor no debe regresar ningún valor (no necesitamos un return). Más adelante estudiaremos un poco más a fondo cómo funcionan la sobrecarga de métodos y sobrecarga de constructores.
+
+Cuando es por **valor**, la información de la variable se **almacena** en una **dirección de memoria diferente al recibirla en la función**, por lo tanto si el valor de esa variable **cambia** !no!! afecta la variable original, solo se modifica dentro del contexto de la función.
+
+Cuando es por **referencia**, la variable que se recibe como parámetro en la función apunta exactamente a la **misma dirección de memoria** que la variable original por lo que si dentro de la función se modifica su valor también se modifica la variable original.
+
+![pass by reference -  value](img/passbyreference-value.gif)
+
+### Static: Variables y Métodos Estáticos
+
+Los métodos y variables estáticos nos ayudan a ejecutar o conseguir algún código desde clases no han sido instanciadas, ya que sus valores se guardan en la memoria de nuestro programa, no en diferentes objetos instanciados a través de una clase.
+
+Los métodos estáticos:
+
+- Se pueden usar en toda la clase.
+- Está definido por la palabra reservada **static**.
+- Pueden ser **accesados indicando el nombre de la clase**, la notación punto y el nombre del método.
+- Se invoca en una clase que **no tiene instancias de la clase**.
+
+Las variables estáticas mantienen su valor durante todo el ciclo de vida de nuestro programa, por lo tanto, podemos alterar los valores de una variable estática desde una clase y consumir su valor alterado desde otra sin necesidad de conectar ambas clases.
+
+También podemos importar los métodos estáticos de una clase para usarlos sin necesidad de escribir el nombre de la clase:
+
+```java
+public class Calculadora {
+  public static int suma(int a, int b) {
+    return a + b;
+  }
+}
+```
+
+```java
+import static java.lang.Math.*
+
+public class Principal {
+  public static void (String[] args) {
+    int number = suma(3, 5);
+    System.out.println(number + PI);
+  }
+}
+```
