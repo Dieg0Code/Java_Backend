@@ -94,3 +94,95 @@ La Modularidad en Programación Orientada a Objetos nos ayuda a:
 - Resolución rápida de problemas.
 
 ![modularidad](img/modularidad.jpg)
+
+### Creando nuestra primera Clase
+
+Nuestro proyecto es construir un sistema que nos permita listar y agendar nuestras citas médicas, por lo que debemos crear algunas clases para cada integrante del sistema: doctores, pacientes, entre otras.
+
+Así vamos a crear nuestra primer clase con sus métodos y atributos:
+
+```Java
+// Clases:
+public class Doctor {
+  // Atributos:
+  int id;
+  String name;
+  String speciality;
+
+  // Comportamientos (métodos):
+  public void showName() {
+    // Instrucciones...
+  }
+}
+```
+
+Declarar un Objeto:
+
+```Java
+// Tipo de Objeto ---- Nombre del Objeto
+Doctor myDoctor;
+
+// Otro objeto del mismo tipo Doctor:
+Doctor anotherDoctor;
+
+```
+
+Instanciar un Objeto:
+
+```java
+// Nombre del Objeto ---- Clase base para crear algún tipo de objetos
+myDoctor = new Doctor();
+
+// Otro objeto
+anotherDoctor = new Doctor();
+
+```
+
+Declarar e instanciar un objeto en la misma línea:
+
+```java
+// Declarar el objeto ---- Instanciar el objeto
+Doctor myDoctor = new Doctor();
+```
+
+Utilizar el objeto:
+
+```java
+// Declarar el objeto ---- Instanciar el objeto
+Doctor myDoctor = new Doctor();
+myDoctor.name = "Diego";
+myDoctor.showName();
+```
+
+### Método constructor
+
+El **Método Constructor** es el primer método que se ejecuta por defecto cuando creamos una clase, nos permite crear nuevas instancias de una clase. Lo invocamos con la palabra reservada new seguida del nombre con el que inicializamos la clase y paréntesis.
+
+El método constructor:
+
+- **Crea** nuevas **instancias** de una clase.
+- Tiene el **mismo nombre** que la clase que inicializa.
+- Usa la palabra reservada **new** para invocarlo.
+
+Usa **cero o más argumentos** contenidos dentro de los paréntesis que siguen al nombre.
+
+```java
+// nombreDeLaInstancia = new MétodoConstructor();
+myDoctor = new Doctor();
+```
+
+El compilador de Java crea un método constructor en caso de que no definamos uno, pero de todas formas es muy buena idea programarlo nosotros, ya que nos permite definir y/o configurar el comportamiento de nuestros objetos usando argumentos.
+
+```java
+public class Doctor {
+  // Atributos...
+
+  // Método Constructor:
+  Doctor(/* parámetros */) {
+    // Instrucciones que se ejecutan al crear/instanciar
+    // un nuevo objeto con la clase Doctor...
+  }
+}
+```
+
+El método constructor no debe regresar ningún valor (no necesitamos un return). Más adelante estudiaremos un poco más a fondo cómo funcionan la sobrecarga de métodos y sobrecarga de constructores.
