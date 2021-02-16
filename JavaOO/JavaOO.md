@@ -226,3 +226,34 @@ public class Principal {
   }
 }
 ```
+
+### Creando elementos estáticos
+
+En muchos casos nuestro código necesita ejecutar métodos que no necesariamente deben pertenecer a un objeto o instancia en concreto, ya que pueden ser muy generales (así como `Math.Random`) o los valores que almacenamos deben ser los mismos, sin importar si los consumimos desde una o más clases.
+
+En todos estos casos vale la pena usar variables y métodos estáticos.
+
+### Final: Variables Constantes
+
+Para declarar una constante en java podemos utilizar la palabra reservada **final**. Casi siempre esta palabra
+reservada va a estar de la mano con **static**, no es una regla, pero suele ser así.
+
+En el código se vería así:
+
+```java
+public class Calculadora {
+    public static final double PI = 3.1415926;
+}
+```
+
+**Final** hace a esa variable constante, lo que significa que esa variable no podrá ser resignada nunca.
+
+### Variable vs. Objeto: Un vistazo a la memoria
+
+**Un objeto es una referencia a un espacio en memoria**. Cuando creamos objetos, Java los guarda en la memoria y nos devuelve coordenadas con las que podremos acceder a la información que almacenamos.
+
+Existen dos tipos de memoria: **Stack** y **Heap**.
+
+La memoria **Stack** es mucho más rápida y nos permite almacenar nuestra información de forma “ordenada”. Aquí se guardan las variables y sus valores de tipos de datos primitivos (booleanos, números, strings, entre otros).
+
+Los objetos también usan la memoria Stack, pero no para guardar su información, sino para guardar las coordenadas a la verdadera ubicación del objeto en la memoria **Heap**, una memoria que nos permite guardar grandes cantidades de información, pero con un poco menos de velocidad.
