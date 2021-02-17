@@ -250,6 +250,18 @@ public class Calculadora {
 
 ### Variable vs. Objeto: Un vistazo a la memoria
 
+Otra diferencia entre las variables y los objetos es su situación en memoria, en donde viven las variables primitivas y en donde viven los objetos:
+
+```java
+int 1 = 0;
+Doctor myDoctor = new Doctor();
+Doctor myDoctor2 = new Doctor();
+```
+
+Normalmente cuando reasignamos el valor de 'i' a otra variable sabemos que automáticamente 'i' va a poseer el valor de esa nueva variable que ahora esta tomando, pero en el caso de los objetos es totalmente distinto, esto es por la ubicación que tiene cada elemento.
+
+![heap and stack](img/heapAndStack.png)
+
 **Un objeto es una referencia a un espacio en memoria**. Cuando creamos objetos, Java los guarda en la memoria y nos devuelve coordenadas con las que podremos acceder a la información que almacenamos.
 
 Existen dos tipos de memoria: **Stack** y **Heap**.
