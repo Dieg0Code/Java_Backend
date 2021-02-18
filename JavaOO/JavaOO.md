@@ -269,3 +269,57 @@ Existen dos tipos de memoria: **Stack** y **Heap**.
 La memoria **Stack** es mucho más rápida y nos permite almacenar nuestra información de forma “ordenada”. Aquí se guardan las variables y sus valores de tipos de datos primitivos (booleanos, números, strings, entre otros).
 
 Los objetos también usan la memoria Stack, pero no para guardar su información, sino para guardar las coordenadas a la verdadera ubicación del objeto en la memoria **Heap**, una memoria que nos permite guardar grandes cantidades de información, pero con un poco menos de velocidad.
+
+### Sobrecarga de métodos y constructores
+
+A veces necesitamos que dos o más métodos de una misma clase tengan el mismo nombre, pero con diferentes argumentos o distintos tipos de argumentos/valores de retorno.
+
+Afortunadamente, Java nos permite ejecutar código y métodos diferentes dependiendo de los argumentos que reciba nuestra clase.
+
+```java
+public class Calculadora {
+  // Los dos parámetros y el valor de retorno son de tipo int
+  public int suma(int a, int b) {
+    return a + b;
+  }
+
+  // Los dos parámetros y el valor de retorno son de tipo float
+  public float suma(float a, float b) {
+    return a + b;
+  }
+
+  // Un parámetro es de tipo int, mientras que el otro parámetro
+  // y el valor de retorno son de tipo float
+  public float suma(int a, float b) {
+    return a + b;
+  }
+}
+```
+
+El uso más común de la sobrecarga de métodos es la sobrecarga de constructores para instanciar objetos de formas distintas dependiendo de la cantidad de argumentos que enviamos.
+
+```java
+public class Doctor {
+  static int id = 0;
+  String name;
+  String speciality;
+
+  public Doctor() {
+    this.name = "Nombre por defecto";
+    this.speciality = "Especialidad por defecto";
+  }
+
+  public Doctor(String name, String speciality) {
+    this.name = name;
+    this.speciality = speciality;
+  }
+} 
+```
+
+### Encapsulamiento: Modificadores de acceso
+
+Los **Modificadores de Acceso** nos ayudan a limitar desde dónde podemos leer o modificar atributos especiales de nuestras clases. Podemos definir qué variables se pueden leer/editar por fuera de las clases donde fueron creadas. Esto lo conocemos como **Encapsulamiento**.
+
+![encapsulamiento](img/encapsulamiento.jpg)
+
+![modificadores de acceso](img/modificadoresAcceso.jpg)
