@@ -323,3 +323,33 @@ Los **Modificadores de Acceso** nos ayudan a limitar desde dónde podemos leer o
 ![encapsulamiento](img/encapsulamiento.jpg)
 
 ![modificadores de acceso](img/modificadoresAcceso.jpg)
+
+### Getters y Setters
+
+Los **Getters** y **Setters** nos permiten leer y escribir (respectivamente) los valores de nuestras variables privadas desde fuera de la clase donde fueron creadas. Con los Getters obtenemos los datos de las variables y con los Setters asignamos o cambiamos su valor.
+
+![getters and setters](img/gettersAndSetters.png)
+
+También puedes usar los atajos de tu IDE favorito para generar los métodos getters y setters de todas o algunas de tus variables.
+
+```java
+public class Patient {
+  private String name;
+
+  public String getName() {
+    return "Patient name is " + this.name;
+  }
+
+  public void setName(String newName) {
+    this.name = newName;
+  }
+}
+```
+
+### Variable vs. Objeto
+
+Las **Variables** son entidades elementales muy sencillas, pueden ser números, caracteres, booleanos, entre otras. Los **Objetos** son entidades complejas que pueden estar formadas por la agrupación de diferentes variables y métodos.
+
+Los **Objetos Primitivos** o **Clases Wrapper** son variables primitivas que trabajan con algún tipo de dato y también tienen las características de los objetos.
+
+Por ejemplo: `Byte, Short, Integer, Long, Float, Double, Character, Boolean o String`.
