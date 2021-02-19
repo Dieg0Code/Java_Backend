@@ -384,3 +384,62 @@ public class Main {
   }
 }
 ```
+
+### Clases Internas y Locales a un método
+
+![clases internas](img/clasesInternas.png)
+
+Se pueden encontrar como clases anidadas no estáticas
+
+#### Clases Internas
+
+```java
+public class Outer {
+  public class Inner {
+
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Outer outer = new Outer();
+    Outer.Inner inner = outer.new Inner();
+  }
+}
+```
+
+Necesitamos crear dos objetos para tener acceso hasta la clase Inner, pero con las clases anidadas estáticas no es necesario esto.
+
+Este tipo de clases (no estáticas) no son tan comunes.
+
+#### Clases Locales a un Método
+
+```java
+public class Enclosing {
+  void run() {
+    class Local {
+      void run() {
+
+      }
+    }
+
+    Local local = new Local();
+    local.run();
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+    Enclosing enclosing = new Enclosing();
+    enclosing.run();
+  }
+}
+```
+
+La principal diferencia entre las clases locales a un método y las clases inner comunes es el scope que en este caso el scope de esta clase esta definido para el método run().
+
+Esto puede ser un desperdicio de memoria ya que se están creando un objeto dentro de un método  y para llamar a ese método hay que crear otro objeto.
+
+Es por eso que la mejor opción es utilizar las clases estáticas, porque estas clases van a ser mucho mas eficientes en términos de uso de memoria y cumplen la misma función.
+
+**En resumen es mucho mejor y mas recomendable usar solamente las Clases Estáticas Anidadas.**
