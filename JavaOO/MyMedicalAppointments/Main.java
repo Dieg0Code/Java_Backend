@@ -1,5 +1,7 @@
 package JavaOO.MyMedicalAppointments;
 
+import java.util.Date;
+
 import static JavaOO.MyMedicalAppointments.ui.UIMenu.*;
 
 public class Main {
@@ -7,14 +9,14 @@ public class Main {
         //showMenu();
 
         Doctor myDoctor = new Doctor("Diego Obando", "Dostor");
-        System.out.println(myDoctor.name);
-        System.out.println(myDoctor.speciality);
+        myDoctor.addAvailableAppointment(new Date(), "4pm");
+        myDoctor.addAvailableAppointment(new Date(), "10am");
+        myDoctor.addAvailableAppointment(new Date(), "1pm");
 
-        int i = 0;
-        int b = 2;
-        b = i;
-        //b=0
-        String name = "Diego";
+        for (Doctor.AvailableAppointment availableAppointment : myDoctor.getAvailableAppointments()) {
+            System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
+        }
+
 
         System.out.println();
         System.out.println();
@@ -31,13 +33,6 @@ public class Main {
         patient2.setName("Manuel");
         System.out.println(patient.getName());
         System.out.println(patient2.getName());
-
-        /*patient.setWeight(54.6);
-        System.out.println(patient.getWeight());
-
-        patient.setPhoneNumber("12345678");
-        System.out.println(patient.getPhoneNumber());*/
-
-
+        
     }
 }
