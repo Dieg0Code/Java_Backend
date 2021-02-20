@@ -195,7 +195,9 @@ Cuando es por **referencia**, la variable que se recibe como parámetro en la fu
 
 ### Static: Variables y Métodos Estáticos
 
-Los métodos y variables estáticos nos ayudan a ejecutar o conseguir algún código desde clases no han sido instanciadas, ya que sus valores se guardan en la memoria de nuestro programa, no en diferentes objetos instanciados a través de una clase.
+Los métodos y variables estáticos nos ayudan a ejecutar o conseguir algún código desde clases que no han sido instanciadas, ya que sus valores se guardan en la memoria de nuestro programa, no en diferentes objetos instanciados a través de una clase.
+
+Osea que no es necesario crear un objeto para poder usar este método o variable de tipo **static**.
 
 Los métodos estáticos:
 
@@ -217,6 +219,7 @@ public class Calculadora {
 ```
 
 ```java
+import static Calculadora;
 import static java.lang.Math.*
 
 public class Principal {
@@ -443,3 +446,82 @@ Esto puede ser un desperdicio de memoria ya que se están creando un objeto dent
 Es por eso que la mejor opción es utilizar las clases estáticas, porque estas clases van a ser mucho mas eficientes en términos de uso de memoria y cumplen la misma función.
 
 **En resumen es mucho mejor y mas recomendable usar solamente las Clases Estáticas Anidadas.**
+
+### Enumerations
+
+Los enumerations son tipos de datos muy especiales pues este, es el único en su tipo que sirve para declarar una colección de constantes, al ser así estaremos obligados a escribirlos con mayúsculas.
+
+Usaremos **enum** cada vez que necesitemos representar un conjunto fijo de constantes. *Por ejemplo los días de la semana*.
+
+Así podemos declarar un enumeration usando la palabra reservada **enum**.
+
+```java
+public enum Day {
+  SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+  THURSDAY, FRIDAY, SATURDAY
+}
+```
+
+Puedo crear referencias de enumerations de la siguiente forma:
+
+```java
+Day day;
+switch (day) {
+  case MONDAY:
+    System.out.println(“Mondays are good.”);
+    break;
+  case FRIDAY:
+    System.out.println(“Fridays are nice”);
+    break;
+  case SATURDAY: case: SUNDAY:
+    System.out.println(“Weekends are the best”);
+    break;
+  default:
+    System.out.println(“Midweek are so-so”);
+    break;
+
+}
+```
+
+Y puedo llamar un valor del enumeration así:
+
+```java
+Day.MONDAY;
+Day.FRIDAY;
+Day.SATURDAY;
+```
+
+Los enumerations pueden tener atributos, métodos y constructores, como se muestra:
+
+```java
+public enum Day {
+  MONDAY("Lunes");
+  TUESDAY("Jueves");
+  FRIDAY("Viernes");
+  SATURDAY("Sábado");
+  SUNDAY("Domingo");
+
+  private String spanish;
+  private Day(String s) {
+    spanish = s;
+  }
+
+  private String getSpanish() {
+    return spanish;
+  }
+}
+```
+
+Y para utilizarlo lo podemos hacer así:
+
+```java
+System.out.println(Day.MONDAY);
+```
+
+Imprimirá: **MONDAY**
+
+```Java
+System.out.println(Day.MONDAY.getSpanish());
+```
+
+Imprimirá: **Lunes**
