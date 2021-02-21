@@ -156,7 +156,7 @@ myDoctor.showName();
 
 ### Método constructor
 
-El **Método Constructor** es el primer método que se ejecuta por defecto cuando creamos una clase, nos permite crear nuevas instancias de una clase. Lo invocamos con la palabra reservada new seguida del nombre con el que inicializamos la clase y paréntesis.
+El **Método Constructor** es el primer método que se ejecuta por defecto cuando creamos una clase, nos permite crear nuevas instancias de una clase. Lo invocamos con la palabra reservada **new** seguida del nombre con el que inicializamos la clase y paréntesis.
 
 El método constructor:
 
@@ -524,4 +524,24 @@ Imprimirá: **MONDAY**
 System.out.println(Day.MONDAY.getSpanish());
 ```
 
-Imprimirá: **Lunes**
+Imprimirá: **Lunes**.
+
+### ¿Qué es la Herencia? Don't repeat Yourself
+
+**Don’t repeat yourself** (DRY) consiste en detectar cuando estamos repitiendo el mismo código una y otra vez para crear algún método o función que nos ayude a evitar estos repetidos.
+
+Esta es una de las bases de la programación que siempre debemos tener en cuenta, ya que nos ayuda a reducir la dificultad de nuestro código para implementar cambios y/o mejoras en nuestra aplicación.
+
+La **Herencia** consiste en crear nuevas clases a partir de otras clases, establecemos una relación padre e hijo entre nuestras clases. Es diferente a las clases anidadas, ya que, en vez de crear clases dentro de clases, le indicamos a nuestras subclases de qué superclase pueden heredar **(extends)** para reutilizar el código de algunos de sus métodos.
+
+Recuerda que nuestras clases no pueden heredar de más de una clase.
+
+```java
+public class SuperClass {
+  // ...
+}
+
+public class SubClass extends SuperClass {
+  // ...
+}
+```
