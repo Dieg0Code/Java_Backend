@@ -552,3 +552,36 @@ public class SubClass extends SuperClass {
   // ...
 }
 ```
+
+### Super y This
+
+**Super** indica que una variable o método es de la clase padre, la *superclase* de cual heredan nuestras *subclases*, solo la usamos cuando aplicamos herencia.
+
+Además, podemos llamar al constructor de la clase padre desde sus diferentes subclases usando `super()`; y enviando los argumentos que sean necesarios.
+
+Por otro lado, **this** nos permite especificar que nuestras variables están señalando a la misma clase donde estamos trabajando, ya sea una clase normal, anidada, *subclase* o *superclase*.
+
+![super y this](img/superAndThis.png)
+
+```java
+public class User {
+  int age = 1;
+
+  public int getAge() {
+    return this.age;
+  }
+}
+
+public class Doctor extends User {
+  String speciality = "Dentist";
+
+  Doctor() {
+    super.getAge(); // 1
+    this.getSpeciality(); // Dentist
+  }
+
+  public int getSpeciality() {
+    return this.speciality;
+  }
+}
+```
