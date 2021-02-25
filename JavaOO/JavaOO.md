@@ -599,3 +599,39 @@ Cuando una clase hereda de otra y en esta clase hija se redefine un método con 
 La sobreescritura de constructores consiste en usar los miembros heredados de una *superclase* pero con argumentos diferentes.
 
 Recuerda que no podemos sobrescribir los métodos marcados como **final** o **static**.
+
+#### Polimorfismo
+
+Cabe aclarar que en POO tenemos 3 clases de polimorfismo de las cuales ya hemos revisado 2 tipos:
+
+- **Sobrecarga**: Podemos escribir un método con el mismo nombre varias veces cambiando los parámetros que recibe ya sea en cantidad o en tipos, ademas podemos retornar otro tipo de dato.
+
+```java
+public int suma (int num1, int num2) {
+  return num1 + num2;
+}
+public String suma (String text1, String text2) {
+  return num1 + " " + num2;
+}
+```
+
+- **Sobreescritura**: Podemos escribir un método de la clase padre y cambiar su contenido y asi realizar comportamiento mas especifico:
+
+```java
+// Clase Padre User
+public String toString () {
+  return name + " " + email;
+}
+
+// Clase Hija Patient
+public String toString () {
+  return super.toString() + " " + blood + " " + weight;
+}
+```
+
+- **Ligadura Dinámica**: Podemos ejemplificar a las clases hijas pero tratarlas como su clase padre, puede ser util por ejemplo si queremos un arreglo que contenga objetos tipo User pero que implícitamente también va a contener doctores y pacientes:
+
+```java
+User doctor = new Doctor ("Cristian", "criss.ud@gmail.com");
+User paciente = new Patient ("Carlos", "carlos96@hotmail.com");
+```
