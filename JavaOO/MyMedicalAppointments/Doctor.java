@@ -7,7 +7,7 @@ public class Doctor extends User {
     //Atributos
     private String speciality;
 
-
+    // Constructor
     Doctor(String name, String email) {
         super(name, email);
         System.out.println("El nombre del Doctor asignado es: " + name);
@@ -15,6 +15,14 @@ public class Doctor extends User {
     }
 
     //Comportamientos
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
@@ -24,14 +32,6 @@ public class Doctor extends User {
 
     public ArrayList<AvailableAppointment> getAvailableAppointments() {
         return availableAppointments;
-    }
-
-    public String getSpeciality() {
-        return speciality;
-    }
-
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
     }
 
     //Nested class
