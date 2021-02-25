@@ -594,7 +594,7 @@ Además de los métodos de las superclases, también podemos redefinir el compor
 
 #### Sobreescritura
 
-Cuando una clase hereda de otra y en esta clase hija se redefine un método con una implementación distinta a la de la clase padre
+Cuando una clase hereda de otra y en esta clase hija se redefine un método con una implementación distinta a la de la clase padre.
 
 La sobreescritura de constructores consiste en usar los miembros heredados de una *superclase* pero con argumentos diferentes.
 

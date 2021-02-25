@@ -69,7 +69,14 @@ public class Doctor extends User {
             this.time = time;
         }
 
-
+        @Override
+        public String toString() {
+            return "Available Appointment \nDate: " + date + "\nTime: " + time;
+        }
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nSpeciality: " + speciality + "\nAvailable: " + availableAppointments.toString();
+    }
 }
