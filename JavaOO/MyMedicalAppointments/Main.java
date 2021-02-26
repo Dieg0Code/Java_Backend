@@ -1,8 +1,9 @@
 package JavaOO.MyMedicalAppointments;
 
-import java.util.Date;
+import JavaOO.MyMedicalAppointments.model.Doctor;
+import JavaOO.MyMedicalAppointments.model.Patient;
 
-import static JavaOO.MyMedicalAppointments.ui.UIMenu.*;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {

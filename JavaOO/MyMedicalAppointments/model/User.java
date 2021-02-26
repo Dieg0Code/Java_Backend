@@ -1,4 +1,4 @@
-package JavaOO.MyMedicalAppointments;
+package JavaOO.MyMedicalAppointments.model;
 
 public class User {
     private int id;
