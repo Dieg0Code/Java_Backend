@@ -681,4 +681,49 @@ public class AppointmentDoctor implements ISchedulable {
 }
 ```
 
-- Las clases que tienen getters y setters también son conocidas como POJOS (Plain Old Java Objects)
+- Las clases que tienen getters y setters también son conocidas como POJOS (Plain Old Java Objects).
+
+A diferencia de la herencia, las clases pueden implementar mas de una interface a la vez.
+
+### Collections
+
+Otras interfaces que son muy importantes en Java son los llamados **Collections**.
+
+Los Collections nos van a servir para trabajar con colecciones de datos, específicamente y **solamente con objetos**, para esto recuerda que tenemos disponibles nuestras clases Wrapper que nos ayudan a convertir datos primitivos a objetos.
+
+Los collections se diferencian de los arrays en que su tamaño no es fijo y por el contrario es dinámico.
+
+Diagrama de su composición:
+
+![collections](img/collections.jpg)
+
+Como podemos observar el elemento más alto es la interfaz **Collection**, para lo cual, partiendo de su naturalidad de interface, entendemos que tiene una serie de métodos “básicos” dónde su comportamiento será definido a medida que se vaya implementando en más elementos. De ella se desprenden principalmente las interfaces **Set** y **List**.
+
+La interface **Set** tendrá las siguientes características:
+
+- Almacena objetos únicos, no repetidos.
+- La mayoría de las veces los objetos se almacenarán en desorden.
+- No tenemos índice.
+
+La interface **List** tiene éstas características:
+
+- Puede almacenar objetos repetidos.
+- Los objetos se almacenan en orden secuencial.
+- Tenemos acceso al índice.
+
+#### **Si seguimos analizando las familias tenemos que de Set se desprenden:**
+
+- Clase HashSet
+- Interfaz SortedSet y de ella la clase TreeSet.
+
+**HashSet** los elementos se guardan en **desorden** y gracias al mecanismo llamado hashing (obtiene un identificador del objeto) **permite almacenar objetos únicos**.
+
+**TreeSet** almacena **objetos únicos**, y gracias a su estructura de árbol el **acceso es sumamente rápido**.
+
+#### **Ahora si analizamos la familia List, de ella se desprenden:**
+
+- Clase **ArrayList** puede tener duplicados, no está sincronizada por lo tanto es más rápida.
+- Clase **Vector** es sincronizada, los datos están más seguros pero es más lento.
+- Clase **LinkedList**, puede contener elementos duplicados, no está sincronizada (es más rápida) al ser una estructura de datos doblemente ligada podemos añadir datos por encima de la pila o por debajo.
+
+![list family](img/ListFamily.jpg)
