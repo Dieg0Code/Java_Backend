@@ -16,6 +16,7 @@ public class Main {
 
         System.out.println(myDoctor);
 
+        User user = new Doctor("Diego", "diego@email.com");
         /*
         for (Doctor.AvailableAppointment availableAppointment : myDoctor.getAvailableAppointments()) {
             System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());

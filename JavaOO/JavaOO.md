@@ -185,7 +185,7 @@ public class Doctor {
 }
 ```
 
-El método constructor no debe regresar ningún valor (no necesitamos un return). Más adelante estudiaremos un poco más a fondo cómo funcionan la sobrecarga de métodos y sobrecarga de constructores.
+El método constructor no debe regresar ningún valor (no necesitamos un **return**). Más adelante estudiaremos un poco más a fondo cómo funcionan la sobrecarga de métodos y sobrecarga de constructores.
 
 Cuando es por **valor**, la información de la variable se **almacena** en una **dirección de memoria diferente al recibirla en la función**, por lo tanto si el valor de esa variable **cambia** !no!! afecta la variable original, solo se modifica dentro del contexto de la función.
 
@@ -658,7 +658,7 @@ public class AppointmentDoctor implements IShedulable {
 }
 ```
 
-Es muy común que la interfaces terminen en "able" porque se enfocan a las actividades que sean redundantes en el programa, como "Schedulable", "Readable", "Runable", "Printable" o en otros casos cuando por alguna razón la interfaz no tiene esta naturaleza también es común encontrarlas con un "I" como en "ISchedulable".
+Es muy común que la interfaces terminen en "able" porque se enfocan a las actividades que sean redundantes en el programa, como "Schedulable", "Readable", "Runnable", "Printable" o en otros casos cuando por alguna razón la interfaz no tiene esta naturaleza también es común encontrarlas con un "I" como en "ISchedulable".
 
 #### Composición de Interfaces en Clases
 
@@ -683,7 +683,7 @@ public class AppointmentDoctor implements ISchedulable {
 
 - Las clases que tienen getters y setters también son conocidas como POJOS (Plain Old Java Objects).
 
-A diferencia de la herencia, las clases pueden implementar mas de una interface a la vez.
+**A diferencia de la herencia, las clases pueden implementar mas de una interface a la vez**.
 
 ### Collections
 
@@ -796,3 +796,44 @@ while(it.hasNext()){
   System.out.println("Clave: " + key + " -> Valor: " + treeMap.get(key));
 }
 ```
+
+### Clases Abstractas
+
+A veces NO necesitamos implementar todos los métodos de una clase heredada o interfaz. No siempre necesitamos crear instancias o implementar todos los métodos heredados de una clase padre, así como tampoco podremos necesitar algún método de nuestras interfaces, pero estas nos obligan a escribir el código de todos los métodos que definimos genéricamente.
+
+Afortunadamente, las **Clases Abstractas** resuelven todos estos problemas. Son una combinación entre interfaces y herencia donde no implementaremos todos los métodos ni tampoco crearemos instancias.
+
+```java
+public abstract class Figura {
+  // ...
+}
+
+class Triangulo extends Figura {
+  // ...
+}
+```
+
+- Interface: te obliga a implementar todos los métodos.
+- **Herencia**: A veces no necesitamos crear instancias de una clase padre, porque es muy genérica.
+- **Clases Abstractas**: Combinación entre Interface y Herencia , no implementa todos los métodos, por su composición no es necesario instanciarlo, no se pueden crear instancias de una clase abstracta.
+
+#### Miembros abstractos
+
+Los **Métodos Abstractos** son los métodos que debemos implementar obligatoriamente cada vez que usemos nuestras clases abstractas, mientras que los métodos que no sean abstractos van a ser opcionales.
+
+```java
+public abstract class Figura {
+  abstract void dibujar(); // obligatorio
+  void dibujar3D(); // no es obligatorio
+}
+
+class Triangulo extends Figura {
+  void dibujar() {
+    // Instrucciones para dibujar el triángulo...
+  }
+}
+```
+
+Recuerda los métodos abstractos solo se pueden implementar en clases abstractas. Y las clases abstractas no necesitan ser instanciadas para ser implementadas.
+
+La diferencia entre una clase abstracta y una interface, es que al crear un método abstracto en la clase abstracta (super_clase), se obliga a heredar este método a las clases hijas (sub_clases), en cambio al implementar una interface en una clase ya sea abstracta o concreta, debemos implementar TODOS los métodos que tenga dicha interface.
