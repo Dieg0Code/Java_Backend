@@ -1,5 +1,6 @@
 package JavaOO.MyMedicalAppointments.model;
 
+// Class User
 public abstract class User {
     private int id;
     private String name;
@@ -7,11 +8,13 @@ public abstract class User {
     private String address;
     private String phoneNumber;
 
+    // Constructor
     public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
+    // Getters And Setters
     public int getId() {
         return id;
     }
@@ -62,5 +65,6 @@ public abstract class User {
                 "\nAddress: " + address + ". Phone: " + phoneNumber;
     }
 
+    //Abstract method
     public abstract void showDataUser();
 }
