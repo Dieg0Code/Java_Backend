@@ -870,3 +870,34 @@ Las **interfaces** tienen una estructura similar de métodos abstractos y no abs
 Otra diferencia es el como nombramos a la clase abstracta y a una interfaz, en la clase abstracta pensaremos mas en objetos y en las interfaces pensaremos mas en las acciones que pueden tener en común muchos objetos, es común encontrar nombres como: Drawable, Runnable, Callable, Visualizable. Para las clases abstractas tendremos nombres como: Film, Publication, Figure(esta podrá ser heredada en otros tipos de figura como cuadrados, triángulos, círculos, etc).
 
 La palabra clave en ambos elementos es **abstracto**. Una buena practica es que el diseño de tus aplicaciones siempre este orientado a interfaces y no a la implementación, concentrate en crear buenas abstracciones, intenta encontrar el comportamiento común, enfocate en la declaración de tus métodos. Si tratas de manera homogénea y con independencia tus módulos, tus programas serán mucho mas escalables y eficientes.
+
+### Interfaces en Java 8 y 9
+
+Las **Interfaces** nos permiten usar métodos abstractos y campos constantes para implementar herencia/polimorfismo de forma muy similar a las clases abstractas.
+
+A partir de Java 8 podemos tener implementación en métodos para heredar y reutilizar diferentes comportamientos. No todos los métodos de nuestras interfaces deben ser abstractos, ahora podemos usar el modificador de acceso `default` y desde Java 9 también `private`.
+
+Recuerda que el nivel de acceso de default y private son los mismos que estudiamos en clases anteriores.
+
+```java
+public interface MyInterface {
+  // Métodos default: nos permite heredar la definición
+  // de la función y también su implementación...
+  default void defaultMethod() {
+    privateMethod("Hello from the default method!");
+  }
+
+  // Métodos private: nos permiten definir comportamiento,
+  // pero solo se puede usar desde otras clases de esta
+  // interfaz, no se hereda a la clase hija....
+  private void privateMethod(final String message) {
+    System.out.println(message);
+  }
+
+  // Métodos abstractos: recuerda que todos los métodos
+  // son abstractos por defecto...
+  void normalMethod();
+}
+```
+
+![encapsulamiento](img/encapsulamiento.jpg)
