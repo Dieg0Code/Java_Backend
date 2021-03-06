@@ -854,5 +854,19 @@ User user = new User() {
   public void showDataUser() {
     // Instrucciones...
   }
-};
+}; 
 ```
+
+### Diferencias entre las Interfaces y las Clases Abstractas
+
+#### **Clase Abstracta**
+
+Una **clase abstracta** unicamente se utilizara para definir subclases, es decir, esta siempre deberá ser heredada para poder usar y sobrescribir los métodos, una restricción que tiene esta clase es que naturalmente no se podrán crear instancias u objetos de esta, unicamente solo se podrá heredar por lo tanto la herencia de métodos se hará de forma lineal, es decir, desde una clase padre hasta una clase hijo y asi sucesivamente, podemos heredar métodos abstractos y no abstractos por lo tanto una clase abstracta solo me servirá para redefinir nuevas clases sin necesidad de crear nuevos objetos.
+
+#### **Interface**
+
+Las **interfaces** tienen una estructura similar de métodos abstractos y no abstractos, pero aquí el enfoque sera en los métodos, estos pueden implementarse en muchas familias de clases, la implementación de métodos deja de ser lineal como en las clases abstractas. Usaremos las Interfaces para implementar métodos que se comparten entre familias, es decir, la relación va mas allá de la herencia entre dos clases.
+
+Otra diferencia es el como nombramos a la clase abstracta y a una interfaz, en la clase abstracta pensaremos mas en objetos y en las interfaces pensaremos mas en las acciones que pueden tener en común muchos objetos, es común encontrar nombres como: Drawable, Runnable, Callable, Visualizable. Para las clases abstractas tendremos nombres como: Film, Publication, Figure(esta podrá ser heredada en otros tipos de figura como cuadrados, triángulos, círculos, etc).
+
+La palabra clave en ambos elementos es **abstracto**. Una buena practica es que el diseño de tus aplicaciones siempre este orientado a interfaces y no a la implementación, concentrate en crear buenas abstracciones, intenta encontrar el comportamiento común, enfocate en la declaración de tus métodos. Si tratas de manera homogénea y con independencia tus módulos, tus programas serán mucho mas escalables y eficientes.
