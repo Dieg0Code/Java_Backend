@@ -56,6 +56,6 @@ public class Patient extends User {
     @Override
     public void showDataUser() {
         System.out.println("Paciente");
-        System.out.println("Historial completo desde nacimiento");
+        System.out.println("Historial completo desde nacimiento\n");
     }
 }

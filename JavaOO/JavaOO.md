@@ -837,3 +837,22 @@ class Triangulo extends Figura {
 Recuerda los métodos abstractos solo se pueden implementar en clases abstractas. Y las clases abstractas no necesitan ser instanciadas para ser implementadas.
 
 La diferencia entre una clase abstracta y una interface, es que al crear un método abstracto en la clase abstracta (super_clase), se obliga a heredar este método a las clases hijas (sub_clases), en cambio al implementar una interface en una clase ya sea abstracta o concreta, debemos implementar TODOS los métodos que tenga dicha interface.
+
+### Clases Anónimas
+
+Las Clases Anónimas son una forma de instanciar clases abstractas sin necesidad de usar sus clases hijas. Pero este tipo de instanciación tiene algunas restricciones: el ciclo de vida de estas instancias NO es duradero, no las tendremos disponibles durante toda la ejecución del programa.
+
+```java
+// Clase Abstracta:
+public abstract class Figura {
+  abstract void dibujar();
+}
+
+// Clase Anónima:
+User user = new User() {
+  @Override
+  public void showDataUser() {
+    // Instrucciones...
+  }
+};
+```
