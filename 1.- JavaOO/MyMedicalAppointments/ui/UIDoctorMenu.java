@@ -62,7 +62,7 @@ public class UIDoctorMenu {
 
                 System.out.println("Your date is: " + date + "\n1. Correct \n2. Change Date");
                 int responseDate = Integer.valueOf(scanner.nextLine());
-                if(responseDate == 2) continue;
+                if (responseDate == 2) continue;
 
                 int responseTime = 0;
                 String time = "";

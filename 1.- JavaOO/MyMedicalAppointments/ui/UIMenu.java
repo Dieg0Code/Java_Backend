@@ -78,7 +78,7 @@ public class UIMenu {
             Scanner sc = new Scanner(System.in);
             String email = sc.nextLine();
             if (userType == 1) {
-                for (Doctor d: doctors) {
+                for (Doctor d : doctors) {
                     if (d.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         //Obtener el usuario loggeado
@@ -89,8 +89,8 @@ public class UIMenu {
             }
 
             if (userType == 2) {
-                for (Patient p: patients) {
-                    if(p.getEmail().equals(email)) {
+                for (Patient p : patients) {
+                    if (p.getEmail().equals(email)) {
                         isEmailCorrect = true;
                         patientLogged = p;
                         UIPatientMenu.showPatientMenu();
