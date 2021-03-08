@@ -12,8 +12,6 @@ public class Doctor extends User {
     // Constructor
     public Doctor(String name, String email) {
         super(name, email);
-        System.out.println("\nEl nombre del Doctor asignado es: " + name);
-        this.speciality = speciality;
     }
 
     //Comportamientos
