@@ -13,7 +13,7 @@ public class UIPatientMenu {
         do {
             System.out.println("\n\n");
             System.out.println("Patient");
-            System.out.println("Welcome: " + UIMenu.patientLogged);
+            System.out.println("Welcomee: " + UIMenu.patientLogged.getName());
             System.out.println("1. Book an Appointment");
             System.out.println("2. My Appointment");
             System.out.println("0. Logout");
@@ -26,6 +26,7 @@ public class UIPatientMenu {
                     showBookAppointmentMenu();
                     break;
                 case 2:
+                    showPatientMyAppointments();
                     break;
                 case 0:
                     UIMenu.showMenu();
@@ -89,6 +90,8 @@ public class UIPatientMenu {
                 );
                 showPatientMenu();
             }
+            System.out.println("0. Return");
+            response = Integer.valueOf(sc.nextLine());
         } while (response != 0);
     }
 
@@ -109,7 +112,7 @@ public class UIPatientMenu {
                         "\n Doctor: " + UIMenu.patientLogged.getAppointmentDoctors().get(i).getDoctor().getName()
                 );
             }
-            System.out.println("0. Return");
+            showPatientMenu();
         } while (response != 0);
     }
 }
