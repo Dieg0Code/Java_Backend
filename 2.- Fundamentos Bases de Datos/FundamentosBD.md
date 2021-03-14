@@ -143,3 +143,12 @@ Para tratar de desligar un poco y no hacerlas débiles por identidad, podemos as
 ![entidades débiles existencia](img/entiadesDebilesExistencia.png)
 
 En ese caso se vuelven débiles ya no por identidad, porque se pueden identificar solas, pero si por existencia, esto significa que aunque agregues una **id** que es diferente del de **libro** y es propio del **ejemplar**, aun asi conceptualmente no puedes tener un ejemplar sin un libro, entonces, aunque no depende por el id de la entidad fuerte aun asi no podemos tener un ejemplar sin un libro primero.
+
+### Entidades de Platzi Blog
+
+Nuestro proyecto será un manejador de Blogpost. Es un contexto familiar y nos representará retos muy interesantes.
+
+- Primer paso: Identificar las entidades.
+- Segundo paso: Pensar en los atributos.
+
+![entidades de PaltziBlog](img/entidadesDePlatziBlog.jpg)
