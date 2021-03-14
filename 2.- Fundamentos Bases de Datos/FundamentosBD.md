@@ -51,3 +51,19 @@ Las bases de datos **basadas en archivos** eran datos guardados en texto plano, 
 - Regla 8: INDEPENDENCIA DE LA REPRESENTACIÓN FÍSICA DE DATOS
   - Los programas de aplicación y actividades de terminal permanecen inalterados a nivel lógico cualesquiera sean  los cambios efectuados, tanto en la representación del almacenamiento, como en los métodos de acceso.
   - El modelo relacional es un modelo lógico de datos, y oculta las características de su representación física.
+- Regla 9: INDEPENDENCIA DE MODIFICACIONES LÓGICAS DE DATOS
+  - Los programas de aplicación y actividades del terminal permanecen inalterados a nivel lógico cualesquiera sean los cambios que se realicen a las tablas base que preserven la información.
+  - Cuando se modifica el esquema lógico preservando información, no se necesita modificar nada en niveles superiores.
+- Regla 10: INDEPENDENCIA DE LAS RESTRICCIONES DE INTEGRIDAD
+  - Las restricciones de integridad para una determinada base de datos relacionales pueden ser definidos en el lenguaje de datos relacionales, y almacenables en el catálogo, no en el programa de aplicación.
+    - Integridad de Entidad: Toda tabla debe tener una clave primaria.
+    - Integridad de Dominio: Toda columna de una tabla contendrá valores exclusivamente de un determinado dominio (conjunto de valores válidos)
+    - Integridad Referencial: Toda clave foránea no nula debe existir en la relación donde es clave primaria.
+- Regla 11: INDEPENDENCIA DISTRIBUIDA
+  - Una Base de Datos Relacional es independiente de la distribución.
+  - Las mismas tareas y programas se ejecutan igual en una base de datos centralizada que en una distribuida.
+  - Las bases de datos son fácilmente distribuibles.
+- Regla 12: REGLA DE LA NO SUBVERSIÓN
+  - Si un sistema relacional tiene un lenguaje de bajo nivel, el nivel bajo no puede ser usado para subvertir (saltarse) las reglas de integridad y las restricciones expresadas en los lenguajes relacionales de más alto nivel a la vez.
+  - Algunos problemas no se pueden solucionar directamente con el lenguaje de alto nivel.
+  - Normalmente se usa SQL incorporado en un lenguaje anfitrión para solucionar estos problemas. Se utiliza el concepto de cursor para tratar individualmente las filas de una tabla. En cualquier caso no debe ser posible saltarse las restricciones de integridad impuestos al tratar las filas a ese nivel.
