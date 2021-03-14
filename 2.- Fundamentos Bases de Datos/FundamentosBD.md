@@ -56,6 +56,7 @@ Las bases de datos **basadas en archivos** eran datos guardados en texto plano, 
   - Cuando se modifica el esquema lógico preservando información, no se necesita modificar nada en niveles superiores.
 - **Regla 10: INDEPENDENCIA DE LAS RESTRICCIONES DE INTEGRIDAD**
   - Las restricciones de integridad para una determinada base de datos relacionales pueden ser definidos en el lenguaje de datos relacionales, y almacenables en el catálogo, no en el programa de aplicación.
+  - Como parte de las restricciones inherentes al modelo relacional (parte de su definición):
     - Integridad de Entidad: Toda tabla debe tener una clave primaria.
     - Integridad de Dominio: Toda columna de una tabla contendrá valores exclusivamente de un determinado dominio (conjunto de valores válidos)
     - Integridad Referencial: Toda clave foránea no nula debe existir en la relación donde es clave primaria.
@@ -67,3 +68,78 @@ Las bases de datos **basadas en archivos** eran datos guardados en texto plano, 
   - Si un sistema relacional tiene un lenguaje de bajo nivel, el nivel bajo no puede ser usado para subvertir (saltarse) las reglas de integridad y las restricciones expresadas en los lenguajes relacionales de más alto nivel a la vez.
   - Algunos problemas no se pueden solucionar directamente con el lenguaje de alto nivel.
   - Normalmente se usa SQL incorporado en un lenguaje anfitrión para solucionar estos problemas. Se utiliza el concepto de cursor para tratar individualmente las filas de una tabla. En cualquier caso no debe ser posible saltarse las restricciones de integridad impuestos al tratar las filas a ese nivel.
+
+### Entidades y atributos
+
+Una **entidad** es algo similar a un objeto (programación orientada a objetos) y representa algo en el mundo real, incluso algo abstracto. Tienen atributos que son las cosas que los hacen ser una entidad y por convención se ponen en plural.
+
+Los **atributos compuestos** son aquellos que tienen atributos ellos mismos.
+
+Los **atributos llave** son aquellos que identifican a la entidad y no pueden ser repetidos. Existen:
+
+- **Naturales**: son inherentes al objeto como el número de serie.
+- **Clave artificial**: no es inherente al objeto y se asigna de manera arbitraria.
+
+**Entidades fuertes**: son entidades que pueden sobrevivir por sí solas.
+
+**Entidades débiles**: no pueden existir sin una entidad fuerte y se representan con un cuadrado con doble línea.
+
+- **Identidades débiles por identidad**: no se diferencian entre sí más que por la clave de su identidad fuerte.
+- **Identidades débiles por existencia**: se les asigna una clave propia.
+
+La nomenclatura usada para representar las entidades se llama Notación de Chen.
+
+Algunos símbolos que se usan para la representación de entidades:
+
+![Chen's notation](img/notacionDeChen.jpg)
+
+Las entidades se escriben en plural y estan representadas por un conjunto de atributos.
+
+Estas pueden ser:
+
+- Concreta: Persona, empleado, casa, auto, etc.
+- Abstracta: Cuenta Bancaria, empresa, curso.
+
+![entidades y atributos](img/entidadesYAtributos.jpg)
+
+- Multivaluados: Puede tener varios valores (teléfonos, hijos, discos duros).
+- Compuestos: Desde los cuales se desprenden más atributos.
+- Llave: Aquel que identifica la entidad y no se puede repetir y existen dos tipos:
+  - Natural: Son inherentes del Objeto (Cedula, n° serie).
+  - Artificial: No es inherente al Objeto y se asigna arbitrariamente.
+- Derivados: Es aquel que se obtiene de un atributo definido (fecha de nacimiento = edad).
+
+#### **Ejemplo de Entidad:**
+
+![ejemplo de entidad](img/ejemploEntidad.jpg)
+
+#### **Atributos:**
+
+La primera y la cuarta fila son iguales, esto no podemos permitirlo al crear nuestra base de datos por lo tanto añadimos un atributo extra el cual sera el atributo llave, en este caso el n° de serie.
+
+![ejemplo atributos](img/ejemploAtributos.png)
+
+#### **Entidades débiles:**
+
+Las entidades débiles dependen de una entidad fuerte para existir. 
+
+Ejemplares es una entidad débil de Libros porque no puedes tener por ejemplo en una biblioteca un ejemplar de un libro que no tienes, se necesita tener forzosamente un libro para tener varios ejemplares de este
+
+![entidades débiles](img/entidadesDebiles.png)
+
+#### **Entidades débiles: identidad**
+
+Las entidades débiles pueden ser débiles por dos motivos, **por identidad** o **por existencia**. Por identidad quiere decir que no se diferencian entre si mas que por la **clave** de su **entidad fuerte**.
+
+Para diferenciar los datos repetidos en ejemplares le podemos agregar la clave de libro, esto la hace dependiente y la hace débil hacia libros a través de su campo de identificación.
+
+![identidad en entidades débiles](img/entidadesDebilesIdentidad.png)
+
+
+#### **Entidades débiles: existencia**
+
+Para tratar de desligar un poco y no hacerlas débiles por identidad, podemos asignarle una clave propia.
+
+![entidades débiles existencia](img/entiadesDebilesExistencia.png)
+
+En ese caso se vuelven débiles ya no por identidad, porque se pueden identificar solas, pero si por existencia, esto significa que aunque agregues una **id** que es diferente del de **libro** y es propio del **ejemplar**, aun asi conceptualmente no puedes tener un ejemplar sin un libro, entonces, aunque no depende por el id de la entidad fuerte aun asi no podemos tener un ejemplar sin un libro primero.
