@@ -71,7 +71,7 @@ Las bases de datos **basadas en archivos** eran datos guardados en texto plano, 
 
 ### Entidades y atributos
 
-Una **entidad** es algo similar a un objeto (programación orientada a objetos) y representa algo en el mundo real, incluso algo abstracto. Tienen atributos que son las cosas que los hacen ser una entidad y por convención se ponen en plural.
+**Una entidad es algo similar a un objeto (programación orientada a objetos) y representa algo en el mundo real, incluso algo abstracto**. Tienen atributos que son las cosas que los hacen ser una entidad y por convención se ponen en plural.
 
 Los **atributos compuestos** son aquellos que tienen atributos ellos mismos.
 
@@ -115,15 +115,15 @@ Estas pueden ser:
 
 #### **Atributos:**
 
-La primera y la cuarta fila son iguales, esto no podemos permitirlo al crear nuestra base de datos por lo tanto añadimos un atributo extra el cual sera el atributo llave, en este caso el n° de serie.
+La primera y la cuarta fila son iguales, esto no podemos permitirlo al crear nuestra base de datos por lo tanto añadimos un atributo extra el cual sera **el atributo llave, en este caso el n° de serie**.
 
 ![ejemplo atributos](img/ejemploAtributos.png)
 
 #### **Entidades débiles:**
 
-Las entidades débiles dependen de una entidad fuerte para existir. 
+Las entidades débiles dependen de una entidad fuerte para existir.
 
-Ejemplares es una entidad débil de Libros porque no puedes tener por ejemplo en una biblioteca un ejemplar de un libro que no tienes, se necesita tener forzosamente un libro para tener varios ejemplares de este
+Ejemplares es una entidad débil de Libros porque no puedes tener, por ejemplo, en una biblioteca un ejemplar de un libro que no tienes, se necesita tener forzosamente un libro para tener varios ejemplares de este
 
 ![entidades débiles](img/entidadesDebiles.png)
 
@@ -134,7 +134,6 @@ Las entidades débiles pueden ser débiles por dos motivos, **por identidad** o 
 Para diferenciar los datos repetidos en ejemplares le podemos agregar la clave de libro, esto la hace dependiente y la hace débil hacia libros a través de su campo de identificación.
 
 ![identidad en entidades débiles](img/entidadesDebilesIdentidad.png)
-
 
 #### **Entidades débiles: existencia**
 
